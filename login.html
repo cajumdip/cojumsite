@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Cojum</title>
+    <link rel="stylesheet" href="login.css">
+    <script>
+        // This script will handle the redirection after form validation
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simple validation (you can replace this with actual authentication)
+            if (username && password) {
+                // Redirect to the logged-in page if both fields are filled
+                window.location.href = 'loggedinindex.html';
+            } else {
+                alert('Vul alstublieft zowel de gebruikersnaam als het wachtwoord in.');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <!-- Updated form to handle submission with JavaScript -->
+        <form id="login-form" onsubmit="handleSubmit(event)">
+            <label for="username">Gebruikersnaam:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Wachtwoord:</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Removed onclick, handling submission via form -->
+            <button type="submit" class="submit">Submit</button>
+
+            <p>Nog geen account? <a href="registreren.html">Registreer hier</a></p>
+        </form>
+    </div>
+</body>
+</html>

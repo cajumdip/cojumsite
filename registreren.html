@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registreren - Cojum</title>
+    <link rel="stylesheet" href="registreren.css">
+    <script>
+        // Function to dynamically add text boxes
+        function addTextbox(id) {
+            const container = document.getElementById(id);
+            const newTextbox = document.createElement("input");
+            newTextbox.type = "text";
+            newTextbox.className = "dynamic-input";
+            container.appendChild(newTextbox);
+        }
+
+        // Function to handle form submission and validation
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const bio = document.getElementById('bio').value;
+            const location = document.getElementById('location').value;
+            const contact = document.getElementById('contact-info').value;
+            
+            // Simple form validation (you can add more checks)
+            if (username && email && bio && location && contact) {
+                // Redirect to another page if the form is valid
+                window.location.href = 'loggedinindex.html';
+            } else {
+                alert('Vul alstublieft alle verplichte velden in.');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="register-container">
+        <h1>Registreren</h1>
+        <!-- Updated form to handle submission with JavaScript -->
+        <form id="register-form" onsubmit="handleSubmit(event)" class="form-layout">
+            <div class="left-column">
+                <label for="username">Gebruikersnaam:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="role">Selecteer uw rol:</label>
+                <select id="role" name="role" required>
+                    <option value="artiest">Artiest</option>
+                    <option value="zaal">Zaal</option>
+                </select>
+
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio" rows="4" required></textarea>
+            </div>
+
+            <div class="right-column">
+                <label for="genre">Genre(s):</label>
+                <div id="genre-container">
+                    <input type="text" id="genre" name="genre[]" class="dynamic-input" required>
+                </div>
+                <button type="button" onclick="addTextbox('genre-container')">Voeg meer genre toe</button>
+
+                <label for="location">Locatie:</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="contact-info">Contactinformatie:</label>
+                <div id="contact-container">
+                    <input type="text" id="contact-info" name="contact[]" class="dynamic-input" required>
+                </div>
+                <button type="button" onclick="addTextbox('contact-container')">Voeg meer contactinformatie toe</button>
+
+                <label for="albums">Albums:</label>
+                <div id="albums-container">
+                    <input type="text" id="albums" name="albums[]" class="dynamic-input">
+                </div>
+                <button type="button" onclick="addTextbox('albums-container')">Voeg meer albums toe</button>
+            </div>
+            
+            <div class="full-width">
+                <button type="submit">Registreren</button>
+            </div>
+
+            <p>Al een account? <a href="login.html">Log hier in</a></p>
+        </form>
+    </div>
+</body>
+</html>

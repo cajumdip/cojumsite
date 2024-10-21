@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page - Cojum</title>
+    <link rel="stylesheet" href="donatie.css">
+</head>
+<body>
+    <header>
+        <a href='loggedinindex.html'>
+            <img src="https://i.postimg.cc/pVkwDKx0/Cojum.png" alt="Cojum Logo">
+        </a>
+        
+        <nav>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="donation-section">
+        <h1>Doneer aan Cojum Dip!</h1>
+        <p>Bedankt voor uw steun! Kies een betaalmethode en voer het bedrag in dat u wilt doneren.</p>
+
+        <form id="donation-form">
+            <label for="payment-method">Kies een betaalmethode:</label>
+            <select id="payment-method" name="payment-method">
+                <option value="ideal">IDEAL</option>
+                <option value="paypal">PayPal</option>
+                <option value="google-pay">Google Pay</option>
+            </select>
+
+            <label for="donation-amount">Bedrag (in euros):</label>
+            <input type="number" id="donation-amount" name="donation-amount" min="1" required placeholder="Voer bedrag in">
+
+            <button type="submit" class="donate-button">Doneer</button>
+        </form>
+    </section>
+</body>
+</html>

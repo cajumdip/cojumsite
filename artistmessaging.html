@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messaging</title>
+    <link rel="stylesheet" href="artistmessaging.css">
+</head>
+<body>
+    <header>
+        <a href='loggedinindex.html'>
+            <img src="https://i.postimg.cc/pVkwDKx0/Cojum.png" alt="Cojum Logo">
+        </a>
+        <nav>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="message-container">
+        <h1>Send a Message to Cojum Dip</h1>
+        <form class="message-form">
+            <label for="name">Onderwerp:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Bericht:</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <button type="submit" class="submit">Submit</button>
+        </form>
+    </section>
+</body>
+</html>
